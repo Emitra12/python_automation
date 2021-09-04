@@ -1,0 +1,16 @@
+{
+    "source": {
+        "driver": "oracle.jdbc.driver.OracleDriver",
+        "password": "surya12345678999",
+        "query": "ODS_SL_JO.SR00W250",
+        "url": "jdbc:oracle:thin:@arb30-scan:1521/odsprod",
+        "user": "suryaArb11"
+    },
+    "target": {
+        "format": "parquet",
+        "maxRecordsPerFile": 10000000,
+        "outputPath": "/edh/prod/data/cifdb/raw/cif_jo/",
+        "tableName": "SR00W250",
+        "transformationQuery": "select COD_IST  as cod_ist ,COD_CLIENTE  as cod_cliente ,PREF_INRZ_TLF_CASA  as pref_inrz_tlf_casa ,PREF_LOCL_CASA as pref_locl_casa,N_TLF_CASA as n_tlf_casa,N_INTN_CASA  as n_intn_casa ,PREF_INRZ_TLF_UFF  as pref_inrz_tlf_uff ,PREF_LOCL_UFF  as pref_locl_uff ,N_TLF_UFF  as n_tlf_uff ,N_INTN_UFF as n_intn_uff,PREF_INRZ_CEL  as pref_inrz_cel ,PREF_LOCL_CEL  as pref_locl_cel ,N_CEL  as n_cel ,PREF_INRZ_PAGER  as pref_inrz_pager ,PREF_LOCL_PAGER  as pref_locl_pager ,N_PAGER  as n_pager ,INDI_E_MAIL  as indi_e_mail ,cast(DATA_OPERAZ as string)  as data_operaz ,cast(ORA_OPERAZ as string) as ora_operaz,TERMID as termid,OPERATORE  as operatore ,PREF_INRZ_TLF_FAX  as pref_inrz_tlf_fax ,PREF_LOCL_FAX  as pref_locl_fax ,N_TLF_FAX  as n_tlf_fax ,N_INTN_FAX as n_intn_fax,WEB_ADDRS  as web_addrs ,F_TLF_HOME as f_tlf_home,F_TLF_UFF  as f_tlf_uff ,F_TLF_FAX  as f_tlf_fax ,F_TLF_MOBIL  as f_tlf_mobil ,F_TLF_PAG  as f_tlf_pag ,F_EMAIL  as f_email ,cast(CDC_TIMESTAMP as string)  as cdc_timestamp,year(CDC_TIMESTAMP) as year,month(CDC_TIMESTAMP) as month,day(CDC_TIMESTAMP) as day"
+    }
+}

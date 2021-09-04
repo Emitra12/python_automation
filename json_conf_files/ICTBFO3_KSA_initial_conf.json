@@ -1,0 +1,16 @@
+{
+    "source": {
+        "driver": "oracle.jdbc.driver.OracleDriver",
+        "password": "surya12345678999",
+        "query": "ODS_SL.ICTBF03",
+        "url": "jdbc:oracle:thin:@arb30-scan:1521/odsprod",
+        "user": "suryaArb11"
+    },
+    "target": {
+        "format": "parquet",
+        "maxRecordsPerFile": 10000000,
+        "outputPath": "/edh/dev/data/ctfdb/raw/ctf_ksa/",
+        "tableName": "ICTBF03",
+        "transformationQuery": "select CD_ISI as cd_isi,NU_PTL as nu_ptl,PG_PTL as pg_ptl,CD_NDG_FSC as cd_ndg_fsc,CD_TIP_LNK as cd_tip_lnk,NM_CUS_FSC as nm_cus_fsc,CD_TIP_CUS as cd_tip_cus,CD_CUS_ROL as cd_cus_rol,cast(DT_ELI_CUS as string) as dt_eli_cus,CD_MTC_UTE as cd_mtc_ute,cast(TM_AGG_UTE as string) as tm_agg_ute,C_CUST_SEG as c_cust_seg,F_REFUSED as f_refused,F_TRADE_IN as f_trade_in,CD_ASSET_CLASS as cd_asset_class,CD_ASSET_TYPE as cd_asset_type,cast(CDC_TIMESTAMP as string) as cdc_timestamp,year(CDC_TIMESTAMP) as year,month(CDC_TIMESTAMP) as month,day(CDC_TIMESTAMP) as day"
+    }
+}
